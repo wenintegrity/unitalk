@@ -78,12 +78,12 @@ public class MainActivity extends Activity {
                             if (audioRecord == null) {
                                 return;
                             }
-                            final byte[] buffer = new byte[DATA_SIZE];
+                            final float[] buffer = new float[DATA_SIZE];
                             while (isReading) {
-                                audioRecord.read(buffer, 0, DATA_SIZE);
+                                audioRecord.read(buffer, 0, DATA_SIZE, AudioRecord.READ_BLOCKING);
                             }
 
-                            final ArrayList<Byte> currentList = new ArrayList<>();
+                            final ArrayList<Float> currentList = new ArrayList<>();
                             for (int i = 0; i < buffer.length; i++) {
                                 currentList.add(buffer[i]);
                             }
@@ -148,7 +148,7 @@ public class MainActivity extends Activity {
 
     private void createAudioRecorder() {
         final int channelConfig = AudioFormat.CHANNEL_IN_MONO;
-        final int audioFormat = AudioFormat.ENCODING_PCM_16BIT;
+        final int audioFormat = AudioFormat.ENCODING_PCM_FLOAT;
         minBufferSize = AudioRecord.getMinBufferSize(SAMPLE_RATE, channelConfig, audioFormat);
         audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, SAMPLE_RATE, channelConfig, audioFormat, minBufferSize); // maybe data_size here
     }
