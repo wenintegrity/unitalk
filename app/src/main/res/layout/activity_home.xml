@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_first"
+    tools:context="com.unitalk.ui.home.HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/llTitleHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimens36">
+
+        <TextView
+            android:id="@+id/tvHomeScreen"
+            style="@style/Roboto.White.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/home_screen"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:id="@+id/ivSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dimens36"
+            android:contentDescription="@string/settings"
+            android:src="@drawable/ic_settings_white" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/clVoiceSampling"
+        layout="@layout/layout_recording_button"
+        android:layout_width="@dimen/dimens200"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llTitleHome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimens18" />
+
+    <include
+        android:id="@+id/llCheckYourDailyHarmony"
+        layout="@layout/layout_check_harmony"
+        android:layout_margin="@dimen/dimens24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clVoiceSampling"
+        android:layout_centerHorizontal="true" />
+
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

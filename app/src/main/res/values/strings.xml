@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name" translatable="false">SwitchMyMind</string>
+    <string name="rec">RECORD</string>
+    <string name="harmony_result">Thank you!\nThe % harmony gain was</string>
+    <string name="no_internet">Sorry, no server connection!</string>
+    <string name="no_response">Input data was not recorded! Please, try again</string>
+    <string name="input_data_incorrect">Input data have an error! Please, try again</string>
+    <string name="voice_recorded">Your data successfully processed!</string>
+    <string name="casting_error">Sorry, you have an internal class casting error!</string>
+    <string name="no_data">No data for displaying!</string>
+    <string name="send">SEND</string>
+    <string name="no_permissions">Sorry, you have no permissions!</string>
+
+    <string name="card_view_secure_calm">Secure\nCalm</string>
+    <string name="card_view_peaceful_satisfied">Peaceful\nSatisfied</string>
+    <string name="card_view_able_confident">Able\nConfident</string>
+    <string name="card_view_kind_loving">Kind\nLoving</string>
+    <string name="card_view_afraid_aggressive">Afraid\nAggressive</string>
+    <string name="card_view_angry_blaming">Angry\nBlaming</string>
+    <string name="card_view_submissive_manipulative">Submissive\nPleaser</string>
+    <string name="card_view_controlling_manipulative">Controlling\nManipulative</string>
+    <string name="card_view_i_understand_myself">I understand\nmyself/my friend</string>
+    <string name="card_view_i_have_a_solution">I understand and\nI have a solution</string>
+    <string name="card_view_congratulations">Congratulations!</string>
+
+    <!--FACEBOOK RES-->
+    <string name="facebook_app_id" translatable="false">2005262753130055</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb2005262753130055</string>
+
+    <string name="splashTitle">UniTalk</string>
+    <string name="splashSubtitle">Application which really helps</string>
+    <string name="step1">1</string>
+    <string name="step2">2</string>
+    <string name="step3">3</string>
+    <string name="record_voice">Record Voice</string>
+    <string name="settings">Settings</string>
+    <string name="videos">Videos</string>
+    <string name="daily_harmony">Daily Harmony</string>
+    <string name="press_to_start">PRESS TO START</string>
+    <string name="concentrate">CONCENTRATE</string>
+    <string name="concentrating_second">1</string>
+    <string name="voice_sampling">VOICE SAMPLING</string>
+    <string name="skip">SKIP</string>
+    <string name="voice_authentication">VOICE AUTHENTICATION</string>
+    <string name="no_hear_you">We can\'t hear you.\nMake sure you\'re speaking loudly.</string>
+    <string name="think_and_concentrate">Think and concentrate on your\ncurrent troubling conflict.</string>
+
+    <string name="sign_up_title_auth">Sign up</string>
+    <string name="sign_up_title_descr_auth">And discover all our courses\nto keep everything under control</string>
+    <string name="log_in_with_facebook">SIGN UP WITH FACEBOOK</string>
+    <string name="log_in_with_google">SIGN UP WITH GOOGLE</string>
+    <string name="log_in_or_sign_up_with_email">SIGN UP WITH EMAIL</string>
+    <string name="terms_and_conditions_auth"><u>terms and conditions</u></string>
+    <string name="by_signing_up_i_accept_the_auth">By signing up I accept the\u0020</string>
+    <string name="already_have_an_account_auth">Already have an account?</string>
+    <string name="log_in_instead_auth">Log in instead</string>
+    <string name="harmony_checking">HARMONY CHECKING</string>
+
+    <string name="toast_exit_helper">Press back again to exit…</string>
+    <string name="say_aaa">Say \'AAA\'</string>
+    <string name="harmony_checking_cards_title">Choose the most dominant feature\nof your behavior to improve</string>
+    <string name="happy_to_help_you_one_card">We are happy to help you!</string>
+    <string name="facebook_log_out">LOG OUT</string>
+    <string name="greeting_title">Make it simple</string>
+    <string name="greeting_description">If you want to sort everything\nwatch our courses everyday</string>
+    <string name="greeting_title_take_it_easy">Take it easy</string>
+    <string name="done_greeting_activity">DONE</string>
+    <string name="home_screen">HOME SCREEN</string>
+    <string name="label_voice_sampling">Voice Sampling</string>
+    <string name="background">background</string>
+    <string name="solving_trouble_conflict">Solve conflict</string>
+    <string name="header_voice_info_activity">UniTalk analyzes\nthe HARMONY of your voice</string>
+    <string name="title_voice_info_activity">Please sample\nyour voice</string>
+    <string name="body_voice_info_activity">Place the phone microphone\nat around 10 cm from your mouth</string>
+    <string name="ready_to_start">I\'M READY TO START</string>
+    <string name="header_voice_authed">Thank you!\nYour voice has been\nsuccessfully sampled!</string>
+    <string name="repeat_sampling">Please, repeat sampling!</string>
+    <string name="welcome">Welcome!</string>
+    <string name="fb_auth_error">Facebook auth error</string>
+    <string name="fb_remote_error">Facebook remote error</string>
+    <string name="or">Or</string>
+    <string name="next">next</string>
+    <string name="previous">previous</string>
+    <string name="mail">mail</string>
+    <string name="google">google</string>
+    <string name="facebook">facebook</string>
+    <string name="thank_you">thank you</string>
+    <string name="sample_voice">sample voice</string>
+    <string name="greeting">greeting</string>
+    <string name="one_card">one card</string>
+    <string name="test">Test</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">LOG IN</string>
+    <string name="reset">RESET</string>
+    <string name="back"><![CDATA[<]]></string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="password_reset">PASSWORD RESET</string>
+    <string name="password_reset_error_title">Password reset error</string>
+    <string name="password_reset_error">This email format is\nunapropriate and anacceptable</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+    <string name="email_registration">EMAIL REGISTRATION</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="name">Name</string>
+    <string name="save">Save</string>
+    <string name="enter_correct_value">Please, enter correct value between 0 and -45db !</string>
+    <string name="voice_level_changed">Voice level changed!</string>
+    <string name="voice_level_db">Voice Level, db:</string>
+    <string name="sample">Sample</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="data_will_be_lost">Your data will be lost\nif you will get back</string>
+    <string name="too_short_password">Too short password</string>
+    <string name="too_long_password">Password is too long</string>
+    <string name="enter_valid_email">Please enter a valid email address</string>
+    <string name="switch_your_mind">Switch your mind</string>
+    <string name="switch_your_mind_description">UniTalk uses a unique method,\nenables to switch your speech\nfrom rash to rational</string>
+    <string name="record_three_samples">Record three samples</string>
+    <string name="record_three_samples_description">We will record three\nshort samples of your voice.\nSay \"AAA\" each time.</string>
+    <string name="notification_settings_request">Notification Settings Request</string>
+    <string name="turn_on_dnd">To record your voice clearly without outside\nnoise you need to turn on \'do not disturb\'\nmode on the recording time</string>
+    <string name="user_exists">User with this email already exists!</string>
+    <string name="user_not_found">User with this email was not found!</string>
+</resources>

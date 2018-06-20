@@ -1,0 +1,184 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="MainButtonStyle">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">30dp</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!-- font styles -->
+    <style name="Roboto">
+        <item name="android:fontFamily">Roboto</item>
+    </style>
+
+    <!-- color styles -->
+    <style name="Roboto.White" parent="Roboto">
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+
+    <style name="Roboto.LightGrey" parent="Roboto">
+        <item name="android:textColor">#99FFFFFF</item>
+    </style>
+
+    <style name="Roboto.Grey1" parent="Roboto">
+        <item name="android:textColor">#61FFFFFF</item>
+    </style>
+
+    <style name="Roboto.Grey2" parent="Roboto">
+        <item name="android:textColor">#FF808080</item>
+    </style>
+
+    <style name="Roboto.GreyText" parent="Roboto">
+        <item name="android:textColor">#FF6B6B6B</item>
+    </style>
+
+    <style name="Roboto.DarkGrey" parent="Roboto">
+        <item name="android:textColor">#FF424242</item>
+    </style>
+
+    <style name="Roboto.Blue" parent="Roboto">
+        <item name="android:textColor">#FF2C63EC</item>
+    </style>
+
+    <style name="Roboto.DarkBlue" parent="Roboto">
+        <item name="android:textColor">#FF254484</item>
+    </style>
+
+    <style name="Roboto.BlueViolet" parent="Roboto">
+        <item name="android:textColor">#FF3B5998</item>
+    </style>
+
+    <style name="Roboto.LightRed" parent="Roboto">
+        <item name="android:textColor">#FFFC9198</item>
+    </style>
+
+    <style name="Roboto.DarkYellow" parent="Roboto">
+        <item name="android:textColor">#FF9B9B27</item>
+    </style>
+
+    <style name="Roboto.Red" parent="Roboto">
+        <item name="android:textColor">#FFDD3636</item>
+    </style>
+
+    <!-- white texts -->
+    <style name="Roboto.White.12" parent="Roboto.White">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Roboto.White.15" parent="Roboto.White">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Roboto.White.16" parent="Roboto.White">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Roboto.White.18" parent="Roboto.White">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Roboto.White.20" parent="Roboto.White">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Roboto.White.22" parent="Roboto.White">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Roboto.White.24" parent="Roboto.White">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Roboto.White.26" parent="Roboto.White">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="Roboto.White.34" parent="Roboto.White">
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="Roboto.White.130" parent="Roboto.White">
+        <item name="android:textSize">130sp</item>
+    </style>
+
+    <!-- grey1 texts -->
+    <style name="Roboto.Grey1.12" parent="Roboto.Grey1">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Roboto.Grey1.16" parent="Roboto.Grey1">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Roboto.Grey1.16.2Lines" parent="Roboto.Grey1.16">
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <!-- grey2 texts -->
+    <style name="Roboto.Grey2.11" parent="Roboto.Grey2">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!-- light grey texts -->
+    <style name="Roboto.LightGrey.18" parent="Roboto.LightGrey">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- grey text style -->
+    <style name="Roboto.GreyText.14" parent="Roboto.DarkGrey">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- dark grey texts -->
+    <style name="Roboto.DarkGrey.18" parent="Roboto.DarkGrey">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- dark grey texts bold -->
+    <style name="Roboto.DarkGrey.18.Bold" parent="Roboto.DarkGrey.18">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- blue texts -->
+    <style name="Roboto.Blue.12" parent="Roboto.Blue">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- dark blue texts -->
+    <style name="Roboto.DarkBlue.16" parent="Roboto.DarkBlue">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- dark blue texts -->
+    <style name="Roboto.BlueViolet.16" parent="Roboto.DarkBlue">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- light red texts -->
+    <style name="Roboto.LightRed.24" parent="Roboto.LightRed">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- light red texts bold -->
+    <style name="Roboto.LightRed.24.Bold" parent="Roboto.LightRed.24">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- dark yellow texts -->
+    <style name="Roboto.DarkYellow.28" parent="Roboto.DarkYellow">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Roboto.Red.12" parent="Roboto.Red">
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>

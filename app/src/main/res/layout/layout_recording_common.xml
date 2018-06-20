@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/llHintRecordingError"
+        android:layout_centerHorizontal="true"
+        layout="@layout/hint_recording_error"
+        android:layout_marginBottom="@dimen/dimens16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/clVoiceSampling"
+        android:layout_below="@+id/llHintRecordingError"
+        android:layout_centerHorizontal="true"
+        layout="@layout/layout_recording_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_below="@id/clVoiceSampling"
+        android:layout_marginTop="@dimen/dimens16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.unitalk.utils.customview.VisualizerView
+            android:id="@+id/visualizer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens100"
+            android:background="@color/colorTransparent"
+            app:numColumns="36"
+            app:renderColor="@color/colorWhite"
+            app:renderRange="bottom"
+            app:renderType="pixel" />
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/pbProcessing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

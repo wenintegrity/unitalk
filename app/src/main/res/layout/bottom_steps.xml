@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/ivStep1"
+        android:src="@drawable/ic_step_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step1" />
+
+    <ImageView
+        android:id="@+id/ivLine1"
+        android:src="@drawable/ic_line"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dimens8"
+        android:layout_marginEnd="@dimen/dimens8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step1" />
+
+    <ImageView
+        android:id="@+id/ivStep2"
+        android:src="@drawable/ic_step_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step2" />
+
+    <ImageView
+        android:id="@+id/ivLine2"
+        android:src="@drawable/ic_line"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dimens8"
+        android:layout_marginEnd="@dimen/dimens8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step1" />
+
+    <ImageView
+        android:id="@+id/ivStep3"
+        android:src="@drawable/ic_step_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step3" />
+</merge>

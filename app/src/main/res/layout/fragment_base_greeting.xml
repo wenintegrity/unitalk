@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparent"
+    android:orientation="vertical">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <ImageView
+        android:id="@+id/ivGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimens24"
+        android:contentDescription="@string/switch_your_mind"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:src="@drawable/ic_switch_your_mind"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llGreetingDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimens16"
+        android:layout_marginStart="@dimen/dimens16"
+        android:layout_marginTop="@dimen/dimens36"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline">
+
+        <TextView
+            android:id="@+id/tvGreetingTitle"
+            style="@style/Roboto.White.22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dimens16"
+            android:text="@string/switch_your_mind" />
+
+        <TextView
+            android:id="@+id/tvGreetingDescription"
+            style="@style/Roboto.LightGrey.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dimens32"
+            android:gravity="center"
+            android:text="@string/switch_your_mind_description" />
+
+        <Button
+            android:id="@+id/btnGreetingOk"
+            style="@style/Roboto.White.15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens50"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_auth_info"
+            android:text="@string/next" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

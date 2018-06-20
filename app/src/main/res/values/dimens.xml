@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing dimensions -->
+    <dimen name="dimens0">0dp</dimen>
+    <dimen name="dimens2">2dp</dimen>
+    <dimen name="dimens4">4dp</dimen>
+    <dimen name="dimens6">6dp</dimen>
+    <dimen name="dimens8">8dp</dimen>
+    <dimen name="dimens13">13dp</dimen>
+    <dimen name="dimens14">14dp</dimen>
+    <dimen name="dimens15">15dp</dimen>
+    <dimen name="dimens16">16dp</dimen>
+    <dimen name="dimens18">18dp</dimen>
+    <dimen name="dimens24">24dp</dimen>
+    <dimen name="dimens32">32dp</dimen>
+    <dimen name="dimens36">36dp</dimen>
+    <dimen name="dimens50">50dp</dimen>
+    <dimen name="dimens60">60dp</dimen>
+    <dimen name="dimens70">70dp</dimen>
+    <dimen name="dimens80">80dp</dimen>
+    <dimen name="dimens100">100dp</dimen>
+    <dimen name="dimens150">150dp</dimen>
+    <dimen name="dimens170">170dp</dimen>
+    <dimen name="dimens200">200dp</dimen>
+    <dimen name="dimens250">250dp</dimen>
+
+    <!-- Text dimensions -->
+    <dimen name="text16">16sp</dimen>
+    <dimen name="text20">20sp</dimen>
+</resources>

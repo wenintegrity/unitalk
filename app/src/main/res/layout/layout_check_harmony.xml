@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llCheckHarmony"
+    android:background="@color/colorWhite"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:onClick="onViewClicked"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivCheckYourDailyHarmony"
+        android:contentDescription="@string/daily_harmony"
+        android:layout_margin="25dp"
+        android:layout_width="@dimen/dimens36"
+        android:layout_height="@dimen/dimens36"
+        android:src="@drawable/ic_daily_mood_accent_light" />
+
+    <TextView
+        android:id="@+id/tvCheckYourDailyHarmony"
+        android:layout_marginEnd="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Roboto.DarkGrey.18.Bold"
+        android:text="@string/solving_trouble_conflict" />
+</LinearLayout>

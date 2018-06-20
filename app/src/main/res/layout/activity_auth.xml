@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_first"
+    tools:context="com.unitalk.ui.auth.main.AuthMainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dimens16">
+
+        <TextView
+            style="@style/Roboto.White.34"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_up_title_auth" />
+
+        <TextView
+            style="@style/Roboto.Grey1.16.2Lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens16"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.31"
+            android:text="@string/sign_up_title_descr_auth" />
+
+        <LinearLayout
+            android:id="@+id/btnFacebookCustom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens50"
+            android:layout_marginBottom="@dimen/dimens8"
+            android:layout_marginTop="@dimen/dimens24"
+            android:background="@drawable/btn_facebook_auth"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimens16"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/dimens18"
+                android:layout_height="@dimen/dimens18"
+                android:layout_marginEnd="@dimen/dimens16"
+                android:contentDescription="@string/facebook"
+                android:src="@drawable/ic_facebook_14dp" />
+
+            <TextView
+                android:id="@+id/tvSignInFacebook"
+                style="@style/Roboto.White.15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/log_in_with_facebook"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens50"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dimens8"
+            android:layout_marginTop="@dimen/dimens24"
+            android:paddingBottom="@dimen/dimens16"
+            android:paddingTop="@dimen/dimens16" />
+
+        <RelativeLayout
+            android:id="@+id/btnGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens50"
+            android:layout_marginTop="@dimen/dimens8"
+            android:background="@drawable/btn_google_plus"
+            android:gravity="center"
+            android:padding="@dimen/dimens8">
+
+            <ImageView
+                android:layout_width="@dimen/dimens18"
+                android:layout_height="@dimen/dimens18"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="@dimen/dimens16"
+                android:contentDescription="@string/google"
+                android:src="@drawable/ic_google_plus_logo_on_black_background" />
+
+            <TextView
+                android:id="@+id/tvSignInGoogle"
+                style="@style/Roboto.White.15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/log_in_with_google"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/Roboto.Grey1.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/or" />
+
+        <LinearLayout
+            android:id="@+id/llSignup"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens50"
+            android:layout_marginTop="@dimen/dimens8"
+            android:background="@drawable/btn_email_auth"
+            android:gravity="center"
+            android:padding="@dimen/dimens16">
+
+            <ImageView
+                android:layout_width="@dimen/dimens18"
+                android:layout_height="@dimen/dimens18"
+                android:layout_marginEnd="@dimen/dimens16"
+                android:contentDescription="@string/mail"
+                android:src="@drawable/ic_combined_shape_copy" />
+
+            <TextView
+                android:id="@+id/tvLogin"
+                style="@style/Roboto.White.15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/log_in_or_sign_up_with_email"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/llTermsAndConditions"
+            layout="@layout/layout_terms_and_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8" />
+
+
+        <TextView
+            android:id="@+id/tvAlreadyHaveAccount"
+            style="@style/Roboto.White.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens36"
+            android:gravity="center"
+            android:text="@string/already_have_an_account_auth" />
+
+        <TextView
+            android:id="@+id/tvLoginInsteadAuth"
+            style="@style/Roboto.DarkBlue.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:gravity="center"
+            android:padding="@dimen/dimens8"
+            android:text="@string/log_in_instead_auth" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF6B6B6B</color>
+    <color name="colorAccentLight">#FFFC9198</color>
+    <color name="colorOrange">#FF8800</color>
+    <color name="colorGray">#EEEEEE</color>
+    <color name="colorBlack">#8A000000</color>
+
+    <color name="colorDialogButton">#FF254485</color>
+    <color name="bottomNavigationAccentColor">#FF2C63EC</color>
+    <color name="colorGreyButton">#FFC9C9C9</color>
+
+    <color name="moodCardColorRed">#FFFD85A6</color>
+    <color name="moodCardColorRed2">#FFF47B8A</color>
+    <color name="moodCardColorPink">#FFFD85D3</color>
+    <color name="moodCardColorOrange">#FFF3BB72</color>
+    <color name="moodCardColorBlue">#FF79ECED</color>
+    <color name="moodCardColorYellow">#FFF5F56E</color>
+    <color name="moodCardColorYellow2">#FFE5F372</color>
+    <color name="moodCardColorPurple">#FFBD83D6</color>
+    <color name="moodCardColorGreen">#FFB1DC76</color>
+
+    <color name="moodCardTextColorRed">#FFB23C4A</color>
+    <color name="moodCardTextColorRed2">#FFBA4264</color>
+    <color name="errorHintColorRed">#FFDD3636</color>
+    <color name="moodCardTextColorOrange">#FFAD7123</color>
+    <color name="moodCardTextColorGreen">#FF659327</color>
+    <color name="moodCardTextColorBlue">#FF249FA0</color>
+    <color name="moodCardTextColorBlue2">#FF26A0A1</color>
+    <color name="moodCardTextColorYellow">#FF9B9B27</color>
+    <color name="moodCardTextColorYellow2">#FF9BAD23</color>
+    <color name="moodCardTextColorPurple">#FF8E41AF</color>
+    <color name="moodCardTextColorPink">#FFAE3AA5</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorBlueSelected">#2C63EC</color>
+
+    <color name="colorGreetingDotNotSelected">#FC254484</color>
+
+    <color name="colorCircleProgressForeground">#fd8b96</color>
+    <color name="colorCircleProgressBackground">#CFCFCF</color>
+</resources>

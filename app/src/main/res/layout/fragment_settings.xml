@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.unitalk.ui.settings.SettingsFragment">
+
+    <LinearLayout
+        android:id="@+id/llVoiceLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dimens32"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens8"
+            android:labelFor="@+id/etVoiceLevel"
+            android:text="@string/voice_level_db" />
+
+        <EditText
+            android:id="@+id/etVoiceLevel"
+            android:layout_width="@dimen/dimens80"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens8"
+            android:inputType="numberSigned|numberDecimal"
+            android:maxLength="5" />
+
+        <Button
+            android:id="@+id/btnVoiceLevelSave"
+            android:layout_width="@dimen/dimens80"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens8"
+            android:text="@string/save" />
+    </LinearLayout>
+</RelativeLayout>

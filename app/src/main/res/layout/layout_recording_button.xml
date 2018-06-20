@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparent">
+
+    <TextView
+        android:id="@+id/tvRecordingHint"
+        style="@style/Roboto.White.12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="@string/press_to_start" />
+
+    <ImageView
+        android:id="@+id/ivVoiceRecording"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvRecordingHint"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/rec"
+        android:onClick="onViewClicked"
+        android:src="@drawable/ic_voice_sampling" />
+
+    <TextView
+        android:id="@+id/tvVoiceSamplingLabel"
+        style="@style/Roboto.White.18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ivVoiceRecording"
+        android:layout_centerHorizontal="true"
+        android:text="@string/label_voice_sampling"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvBipCounter"
+        style="@style/Roboto.White.130"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvRecordingHint"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimens18"
+        android:text="@string/concentrating_second"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/clSamplingCircle"
+        layout="@layout/layout_voice_sampling"
+        android:layout_width="@dimen/dimens170"
+        android:layout_height="@dimen/dimens170"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+</RelativeLayout>

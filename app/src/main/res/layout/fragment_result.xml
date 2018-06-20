@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/ic_background_second">
+
+    <TextView
+        android:id="@+id/tvHarmonyChkResult"
+        style="@style/Roboto.White.16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimens36"
+        android:lineSpacingMultiplier="1.31"
+        android:text="@string/harmony_checking" />
+
+    <TextView
+        style="@style/Roboto.White.22"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlOvalResult"
+        android:layout_below="@+id/tvHarmonyChkResult"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.18"
+        android:text="@string/harmony_result" />
+
+    <RelativeLayout
+        android:id="@+id/rlOvalResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_oval">
+
+        <TextView
+            android:id="@+id/tv_percents_result"
+            style="@style/Roboto.LightRed.24.Bold"
+            android:layout_width="@dimen/dimens150"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.33"
+            android:maxLines="2"
+            android:maxWidth="150dp"
+            android:text="5.35% -12.26%" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvOK"
+        style="@style/Roboto.White.24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dimens24"
+        android:text="@string/ok" />
+</RelativeLayout>

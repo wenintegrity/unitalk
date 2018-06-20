@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clVoiceSampling"
+    android:background="@color/colorTransparent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.unitalk.utils.customview.CircleProgressBar
+        android:id="@+id/pbCircle"
+        app:progressbarColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/dimens170"
+        android:layout_height="@dimen/dimens170"
+        app:progress="0"
+        app:progressBarThickness="7dp" />
+
+    <TextView
+        android:id="@+id/tvSaySomething"
+        app:layout_constraintStart_toStartOf="@id/pbCircle"
+        app:layout_constraintEnd_toEndOf="@id/pbCircle"
+        app:layout_constraintTop_toTopOf="@id/pbCircle"
+        app:layout_constraintBottom_toBottomOf="@id/pbCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/say_aaa"
+        style="@style/Roboto.White.24" />
+</android.support.constraint.ConstraintLayout>

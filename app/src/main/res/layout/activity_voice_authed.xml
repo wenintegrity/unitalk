@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_first"
+    android:gravity="center_vertical"
+    android:padding="16dp"
+    tools:context=".ui.introduction.authed.VoiceAuthedActivity">
+
+    <TextView
+        android:id="@+id/tv_header_voice_authed"
+        style="@style/Roboto.White.24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimens16"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.33"
+        android:text="@string/header_voice_authed" />
+
+
+    <ImageView
+        android:contentDescription="@string/thank_you"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimens150"
+        android:layout_below="@+id/tv_header_voice_authed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimens16"
+        android:src="@mipmap/ic_launcher" />
+
+</RelativeLayout>

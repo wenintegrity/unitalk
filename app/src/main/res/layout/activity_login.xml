@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlAuth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_first"
+    tools:context="com.unitalk.ui.auth.login.LoginActivity">
+
+    <include
+        android:id="@+id/rlTitleAuth"
+        layout="@layout/layout_title_auth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimens36"
+        android:layout_marginStart="@dimen/dimens16"
+        android:layout_marginTop="@dimen/dimens36" />
+
+    <include
+        android:id="@+id/llEmailPass"
+        layout="@layout/layout_email_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlTitleAuth" />
+
+    <TextView
+        android:id="@+id/tvForgotPassword"
+        style="@style/Roboto.BlueViolet.16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llEmailPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimens8"
+        android:padding="@dimen/dimens8"
+        android:text="@string/forgot_password" />
+</RelativeLayout>

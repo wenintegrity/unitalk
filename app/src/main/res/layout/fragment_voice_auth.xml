@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlVoiceRecording"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_first"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.recording.auth.VoiceAuthFragment">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Roboto.White.16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimens36"
+        android:text="@string/solving_trouble_conflict" />
+
+    <include android:id="@+id/rlRecordingCommon"
+        layout="@layout/layout_recording_common"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stepsView" />
+
+    <com.unitalk.utils.customview.StepsView
+        android:id="@+id/stepsView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens24" />
+</RelativeLayout>

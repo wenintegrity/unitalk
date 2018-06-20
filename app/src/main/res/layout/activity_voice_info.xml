@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_first"
+    android:id="@+id/home"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.introduction.authinfo.VoiceInfoActivity">
+
+    <TextView
+        style="@style/Roboto.White.16"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimens0"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:lineSpacingMultiplier="1.31"
+        android:text="@string/header_voice_info_activity" />
+
+    <TextView
+        style="@style/Roboto.White.24"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimens0"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/title_voice_info_activity" />
+
+    <TextView
+        style="@style/Roboto.White.16"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dimens0"
+        android:layout_weight="1"
+        android:height="@dimen/dimens36"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.31"
+        android:text="@string/body_voice_info_activity" />
+
+    <ImageView
+        android:contentDescription="@string/sample_voice"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimens0"
+        android:layout_weight="1"
+        android:src="@mipmap/ic_launcher" />
+
+    <RelativeLayout
+        android:layout_margin="@dimen/dimens16"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimens0"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btnReadyToStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn_auth_info"
+            android:text="@string/ready_to_start"
+            style="@style/Roboto.White.15" />
+    </RelativeLayout>
+
+</LinearLayout>

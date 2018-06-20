@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/Roboto.Grey1.12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/by_signing_up_i_accept_the_auth" />
+
+    <TextView
+        android:id="@+id/tvTermsAndConditions"
+        style="@style/Roboto.White.12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terms_and_conditions_auth"
+        android:textColor="@android:color/white" />
+</LinearLayout>
