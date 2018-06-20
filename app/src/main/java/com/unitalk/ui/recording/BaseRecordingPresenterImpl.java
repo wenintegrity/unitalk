@@ -78,6 +78,7 @@ public abstract class BaseRecordingPresenterImpl<T extends BaseRecordingView> ex
         super.onStop();
     }
 
+
     @Override
     public void record() {
         init();
