@@ -1,9 +1,11 @@
 package com.unitalk.core;
 
 import android.app.Application;
+import android.content.Context;
 import android.webkit.WebView;
 
 import com.facebook.stetho.Stetho;
+import com.unitalk.utils.LocaleHelper;
 import com.unitalk.utils.ResourcesManager;
 import com.unitalk.utils.StringArrayDataLocalStorage;
 import com.unitalk.utils.UniqueIDManagerKt;
@@ -23,6 +25,11 @@ public class App extends Application {
         stringArrayDataLocalStorage = StringArrayDataLocalStorage.getInstance();
         ResourcesManager.with(this);
         createDeviceID();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base, "en"));
     }
 
     public static App getInstance() {

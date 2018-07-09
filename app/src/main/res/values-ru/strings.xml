@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name" translatable="false">SwitchMyMind</string>
-    <string name="rec">RECORD</string>
-    <string name="harmony_result">Thank you!\nThe % harmony gain was</string>
-    <string name="no_internet">Sorry, no server connection!</string>
+    <string name="rec">ЗАПИСЬ</string>
+    <string name="harmony_result">Спасибо!\nThe % harmony gain was</string>
+    <string name="no_internet">К сожалению, нет подключения к серверу!</string>
     <string name="no_response">Input data was not recorded! Please, try again</string>
     <string name="input_data_incorrect">Input data have an error! Please, try again</string>
     <string name="voice_recorded">Your data successfully processed!</string>
     <string name="casting_error">Sorry, you have an internal class casting error!</string>
     <string name="no_data">No data for displaying!</string>
-    <string name="send">SEND</string>
+    <string name="send">ОТПРАВИТЬ</string>
     <string name="no_permissions">Sorry, you have no permissions!</string>
 
     <string name="card_view_secure_calm">Secure\nCalm</string>
@@ -23,37 +23,37 @@
     <string name="card_view_i_have_a_solution">I understand and\nI have a solution</string>
     <string name="card_view_congratulations">Congratulations!</string>
 
-    <!--FACEBOOK RES-->
+    <!--&lt;!&ndash;FACEBOOK RES&ndash;&gt;
     <string name="facebook_app_id" translatable="false">2005262753130055</string>
-    <string name="fb_login_protocol_scheme" translatable="false">fb2005262753130055</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb2005262753130055</string>-->
 
     <string name="splashTitle">UniTalk</string>
     <string name="splashSubtitle">Application which really helps</string>
     <string name="step1">1</string>
     <string name="step2">2</string>
     <string name="step3">3</string>
-    <string name="record_voice">Record Voice</string>
-    <string name="settings">Settings</string>
-    <string name="videos">Videos</string>
+    <string name="record_voice">Запись звука</string>
+    <string name="settings">Настройки</string>
+    <string name="videos">Видео</string>
     <string name="daily_harmony">Daily Harmony</string>
-    <string name="press_to_start">PRESS TO START</string>
-    <string name="concentrate">CONCENTRATE</string>
+    <string name="press_to_start">НАЧАТЬ</string>
+    <string name="concentrate">СКОНЦЕНТРИРУЙТЕСЬ</string>
     <string name="concentrating_second">1</string>
     <string name="voice_sampling">VOICE SAMPLING</string>
-    <string name="skip">SKIP</string>
+    <string name="skip">ПРОПУСТИТЬ</string>
     <string name="voice_authentication">VOICE AUTHENTICATION</string>
     <string name="no_hear_you">We can\'t hear you.\nMake sure you\'re speaking loudly.</string>
     <string name="think_and_concentrate">Think and concentrate on your\ncurrent troubling conflict.</string>
 
-    <string name="sign_up_title_auth">Sign up</string>
+    <string name="sign_up_title_auth">Войти</string>
     <string name="sign_up_title_descr_auth">And discover all our courses\nto keep everything under control</string>
-    <string name="log_in_with_facebook">SIGN UP WITH FACEBOOK</string>
-    <string name="log_in_with_google">SIGN UP WITH GOOGLE</string>
-    <string name="log_in_or_sign_up_with_email">SIGN UP WITH EMAIL</string>
+    <string name="log_in_with_facebook">ВОЙТИ ЧЕРЕЗ FACEBOOK</string>
+    <string name="log_in_with_google">ВОЙТИ ЧЕРЕЗ GOOGLE</string>
+    <string name="log_in_or_sign_up_with_email">ВОЙТИ ЧЕРЕЗ EMAIL</string>
     <string name="terms_and_conditions_auth"><u>terms and conditions</u></string>
     <string name="by_signing_up_i_accept_the_auth">By signing up I accept the\u0020</string>
-    <string name="already_have_an_account_auth">Already have an account?</string>
-    <string name="log_in_instead_auth">Log in instead</string>
+    <string name="already_have_an_account_auth">У вас уже есть аккаунт?</string>
+    <string name="log_in_instead_auth">Войти</string>
     <string name="harmony_checking">HARMONY CHECKING</string>
 
     <string name="toast_exit_helper">Press back again to exit…</string>
@@ -121,5 +121,5 @@
     <string name="turn_on_dnd">To record your voice clearly without outside\nnoise you need to turn on \'do not disturb\'\nmode on the recording time</string>
     <string name="user_exists">User with this email already exists!</string>
     <string name="user_not_found">User with this email was not found!</string>
-    <string name="change_language">Change language</string>
+    <string name="change_language">Сменить язык</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.unitalk.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,6 +16,7 @@ import com.unitalk.R;
 import com.unitalk.core.App;
 import com.unitalk.ui.callback.OnScreenNavigationCallback;
 import com.unitalk.ui.callback.OnShowMessageCallback;
+import com.unitalk.utils.LocaleHelper;
 
 import butterknife.ButterKnife;
 
@@ -30,6 +32,10 @@ public abstract class BaseActivity extends AppCompatActivity implements OnScreen
         init();
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 
     @Override
     public void onBackPressed() {

@@ -1,6 +1,8 @@
 package com.unitalk.ui.auth.main;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -20,6 +22,8 @@ import com.unitalk.ui.auth.signup.SignupActivity;
 import com.unitalk.ui.callback.OnShowMessageCallback;
 import com.unitalk.ui.home.HomeActivity;
 import com.unitalk.ui.introduction.authinfo.VoiceInfoActivity;
+import com.unitalk.ui.lang.LangActivity;
+import com.unitalk.utils.LocaleHelper;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -40,6 +44,12 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     LinearLayout llSignup;
     @BindView(R.id.tvTermsAndConditions)
     TextView tvTermsAndConditions;
+    @BindView(R.id.tvLang)
+    TextView tvLang;
+    @BindView(R.id.sign_up_title)
+    TextView signUpTitle;
+    @BindView(R.id.sign_up_title_detail)
+    TextView signUpTitleDetail;
 
 
     @Override
@@ -67,7 +77,7 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
         presenter.checkCurrentGoogleAcc(googleApiClient);
     }
 
-    @OnClick({R.id.btnGoogle, R.id.llSignup, R.id.tvLoginInsteadAuth})
+    @OnClick({R.id.btnGoogle, R.id.llSignup, R.id.tvLoginInsteadAuth, R.id.tvLang})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnGoogle:
@@ -79,6 +89,9 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
                 break;
             case R.id.tvLoginInsteadAuth:
                 moveToScreen(LoginActivity.class);
+                break;
+            case R.id.tvLang:
+                moveToScreen(LangActivity.class);
                 break;
         }
     }
@@ -115,5 +128,22 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
                 })
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateViews();
+    }
+
+    private void updateViews() {
+        Context context = LocaleHelper.onAttach(this);
+        Resources resources = context.getResources();
+
+        tvLogInInstead.setText(resources.getString(R.string.log_in_instead_auth));
+        tvTermsAndConditions.setText(resources.getString(R.string.terms_and_conditions_auth));
+        tvLang.setText(resources.getString(R.string.change_language));
+        signUpTitle.setText(resources.getString(R.string.sign_up_title_auth));
+        signUpTitleDetail.setText(resources.getString(R.string.sign_up_title_descr_auth));
     }
 }

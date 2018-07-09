@@ -15,6 +15,7 @@
         android:padding="@dimen/dimens16">
 
         <TextView
+            android:id="@+id/sign_up_title"
             style="@style/Roboto.White.34"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
             android:text="@string/sign_up_title_auth" />
 
         <TextView
+            android:id="@+id/sign_up_title_detail"
             style="@style/Roboto.Grey1.16.2Lines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -169,5 +171,15 @@
             android:gravity="center"
             android:padding="@dimen/dimens8"
             android:text="@string/log_in_instead_auth" />
+
+        <TextView
+            android:id="@+id/tvLang"
+            style="@style/Roboto.DarkBlue.16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:gravity="center"
+            android:padding="@dimen/dimens8"
+            android:text="@string/change_language" />
     </LinearLayout>
 </RelativeLayout>

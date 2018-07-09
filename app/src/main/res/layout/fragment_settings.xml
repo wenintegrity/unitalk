@@ -6,33 +6,59 @@
     tools:context="com.unitalk.ui.settings.SettingsFragment">
 
     <LinearLayout
-        android:id="@+id/llVoiceLevel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/dimens32"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/llVoiceLevel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimens8"
-            android:labelFor="@+id/etVoiceLevel"
-            android:text="@string/voice_level_db" />
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/etVoiceLevel"
-            android:layout_width="@dimen/dimens80"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimens8"
-            android:inputType="numberSigned|numberDecimal"
-            android:maxLength="5" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens8"
+                android:labelFor="@+id/etVoiceLevel"
+                android:text="@string/voice_level_db" />
 
-        <Button
-            android:id="@+id/btnVoiceLevelSave"
-            android:layout_width="@dimen/dimens80"
+            <EditText
+                android:id="@+id/etVoiceLevel"
+                android:layout_width="@dimen/dimens80"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens8"
+                android:inputType="numberSigned|numberDecimal"
+                android:maxLength="5" />
+
+            <Button
+                android:id="@+id/btnVoiceLevelSave"
+                android:layout_width="@dimen/dimens80"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens8"
+                android:text="@string/save" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_lang"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimens8"
-            android:text="@string/save" />
+            android:layout_weight="1"
+            android:padding="@dimen/dimens8">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/change_language"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
     </LinearLayout>
+
 </RelativeLayout>

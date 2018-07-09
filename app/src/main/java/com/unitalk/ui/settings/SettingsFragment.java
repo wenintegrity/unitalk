@@ -1,14 +1,17 @@
 package com.unitalk.ui.settings;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.unitalk.R;
 import com.unitalk.ui.BaseFragment;
+import com.unitalk.ui.lang.LangActivity;
 import com.unitalk.ui.settings.SettingsPresenter;
 import com.unitalk.ui.settings.SettingsPresenterImpl;
 import com.unitalk.ui.settings.SettingsView;
@@ -21,6 +24,8 @@ public class SettingsFragment extends BaseFragment implements SettingsView {
 
     @BindView(R.id.etVoiceLevel)
     EditText etVoiceLevel;
+    @BindView(R.id.btn_lang)
+    FrameLayout btnLang;
 
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
@@ -52,5 +57,11 @@ public class SettingsFragment extends BaseFragment implements SettingsView {
         } else {
             presenter.setVoiceLevel(voiceLevel);
         }
+    }
+
+    @OnClick(R.id.btn_lang)
+    public void click() {
+        Intent intent = new Intent(getContext(), LangActivity.class);
+        startActivity(intent);
     }
 }
