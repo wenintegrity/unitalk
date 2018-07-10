@@ -1,4 +1,4 @@
-package com.unitalk.ui.lang;
+package com.unitalk.ui.lang.settings_model;
 
 public enum Lang {
 

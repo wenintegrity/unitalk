@@ -8,6 +8,10 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.preference.PreferenceManager;
 
+import com.unitalk.ui.lang.settings_model.LangMessageEvent;
+
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.Locale;
 
 public class LocaleHelper {
@@ -30,11 +34,15 @@ public class LocaleHelper {
     public static Context setLocale(Context context, String language) {
         persist(context, language);
 
+        Context resContext;
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return updateResources(context, language);
+            resContext = updateResources(context, language);
+            return resContext;
         }
 
-        return updateResourcesLegacy(context, language);
+        resContext = updateResourcesLegacy(context, language);
+        return resContext;
     }
 
     private static String getPersistedData(Context context, String defaultLanguage) {

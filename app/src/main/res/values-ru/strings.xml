@@ -42,7 +42,7 @@
     <string name="voice_sampling">VOICE SAMPLING</string>
     <string name="skip">ПРОПУСТИТЬ</string>
     <string name="voice_authentication">VOICE AUTHENTICATION</string>
-    <string name="no_hear_you">We can\'t hear you.\nMake sure you\'re speaking loudly.</string>
+    <string name="no_hear_you">Мы вас не слышим. Удостоверьтесь, что вы говорите громко..</string>
     <string name="think_and_concentrate">Think and concentrate on your\ncurrent troubling conflict.</string>
 
     <string name="sign_up_title_auth">Войти</string>
@@ -68,7 +68,7 @@
     <string name="home_screen">HOME SCREEN</string>
     <string name="label_voice_sampling">Voice Sampling</string>
     <string name="background">background</string>
-    <string name="solving_trouble_conflict">Solve conflict</string>
+    <string name="solving_trouble_conflict">Розрешить конфликт</string>
     <string name="header_voice_info_activity">UniTalk analyzes\nthe HARMONY of your voice</string>
     <string name="title_voice_info_activity">Please sample\nyour voice</string>
     <string name="body_voice_info_activity">Place the phone microphone\nat around 10 cm from your mouth</string>

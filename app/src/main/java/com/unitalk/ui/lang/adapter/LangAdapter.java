@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.unitalk.R;
-import com.unitalk.ui.lang.Lang;
+import com.unitalk.ui.lang.settings_model.Lang;
 import com.unitalk.ui.lang.LangPresenter;
 import com.unitalk.utils.LocaleHelper;
 

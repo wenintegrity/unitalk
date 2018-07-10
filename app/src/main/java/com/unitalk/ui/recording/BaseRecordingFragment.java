@@ -2,24 +2,33 @@ package com.unitalk.ui.recording;
 
 import android.Manifest;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.media.AudioManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.DialogFragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.unitalk.R;
 import com.unitalk.core.App;
 import com.unitalk.ui.BaseFragment;
 import com.unitalk.ui.callback.OnNotificationSettingsCallback;
 import com.unitalk.ui.callback.OnShowMessageCallback;
+import com.unitalk.ui.lang.settings_model.LangMessageEvent;
+import com.unitalk.utils.LocaleHelper;
 import com.unitalk.utils.NotificationFiltersManager;
 import com.unitalk.utils.ViewUpdaterKt;
 import com.unitalk.utils.customview.CircleProgressBar;
@@ -63,6 +72,13 @@ public abstract class BaseRecordingFragment<T extends BaseRecordingView> extends
     protected ProgressBar pbProcessing;
 
     protected abstract void init();
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = super.onCreateView(inflater, container, savedInstanceState);
+        return view;
+    }
 
     @Override
     public void onStart() {
@@ -267,5 +283,19 @@ public abstract class BaseRecordingFragment<T extends BaseRecordingView> extends
     private void onRecordStarted() {
         ViewUpdaterKt.goneViews(tvBipCounter, ivVoiceRecording);
         ViewUpdaterKt.showViews(clSamplingCircle);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateViews();
+    }
+
+    private void updateViews() {
+        Context context = LocaleHelper.onAttach(getContext());
+        Resources resources = context.getResources();
+        tvTitle.setText(resources.getString(R.string.solving_trouble_conflict));
+        tvHintAndError.setText(resources.getString(R.string.no_hear_you));
+        tvRecordingHint.setText(resources.getString(R.string.concentrate));
     }
 }

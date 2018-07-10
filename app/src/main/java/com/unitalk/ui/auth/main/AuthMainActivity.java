@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -23,7 +25,11 @@ import com.unitalk.ui.callback.OnShowMessageCallback;
 import com.unitalk.ui.home.HomeActivity;
 import com.unitalk.ui.introduction.authinfo.VoiceInfoActivity;
 import com.unitalk.ui.lang.LangActivity;
+import com.unitalk.ui.lang.settings_model.LangMessageEvent;
 import com.unitalk.utils.LocaleHelper;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -50,6 +56,8 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     TextView signUpTitle;
     @BindView(R.id.sign_up_title_detail)
     TextView signUpTitleDetail;
+    @BindView(R.id.tvAlreadyHaveAccount)
+    TextView tvAlreadyHaveAccount;
 
 
     @Override
@@ -69,6 +77,12 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
         presenter = new AuthMainPresenterImpl(this, this);
         presenter.createFacebookAuth();
         initGoogleAuth();
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -133,17 +147,34 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     @Override
     protected void onResume() {
         super.onResume();
-        updateViews();
+        //updateViews();
     }
 
-    private void updateViews() {
-        Context context = LocaleHelper.onAttach(this);
-        Resources resources = context.getResources();
+    @Override
+    protected void onStop() {
+        super.onStop();
+        //EventBus.getDefault().unregister(this);
+    }
 
-        tvLogInInstead.setText(resources.getString(R.string.log_in_instead_auth));
-        tvTermsAndConditions.setText(resources.getString(R.string.terms_and_conditions_auth));
-        tvLang.setText(resources.getString(R.string.change_language));
-        signUpTitle.setText(resources.getString(R.string.sign_up_title_auth));
-        signUpTitleDetail.setText(resources.getString(R.string.sign_up_title_descr_auth));
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe
+    public void updateViews(LangMessageEvent event) {
+
+        if (event.getType() == 1) {
+            Context context = LocaleHelper.onAttach(this);
+            Resources resources = context.getResources();
+
+            tvLogInInstead.setText(resources.getString(R.string.log_in_instead_auth));
+            tvTermsAndConditions.setText(resources.getString(R.string.terms_and_conditions_auth));
+            tvLang.setText(resources.getString(R.string.change_language));
+            signUpTitle.setText(resources.getString(R.string.sign_up_title_auth));
+            signUpTitleDetail.setText(resources.getString(R.string.sign_up_title_descr_auth));
+            tvAlreadyHaveAccount.setText(resources.getString(R.string.already_have_an_account_auth));
+        }
     }
 }

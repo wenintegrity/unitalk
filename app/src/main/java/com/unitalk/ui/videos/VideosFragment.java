@@ -1,6 +1,7 @@
 package com.unitalk.ui.videos;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,6 +23,7 @@ import com.unitalk.ui.callback.OnMainActivityCallback;
 import com.unitalk.ui.videos.VideosPresenter;
 import com.unitalk.ui.videos.VideosPresenterImpl;
 import com.unitalk.ui.videos.VideosView;
+import com.unitalk.utils.LocaleHelper;
 
 import java.util.concurrent.TimeUnit;
 
@@ -146,5 +148,17 @@ public class VideosFragment extends BaseFragment implements VideosView, MediaPla
         if (onMainActivityCallback != null) {
             onMainActivityCallback.startHarmonyCheckingCardFragment(presenter.createSixMoodItemsList(isSixCardsFragment));
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateViews();
+    }
+
+    private void updateViews() {
+        Context context = LocaleHelper.onAttach(getContext());
+        Resources resources = context.getResources();
+        tvSkipVideo.setText(resources.getString(R.string.skip));
     }
 }

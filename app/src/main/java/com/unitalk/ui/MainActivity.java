@@ -1,5 +1,7 @@
 package com.unitalk.ui;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -16,14 +18,23 @@ import com.unitalk.ui.callback.OnMainActivityCallback;
 import com.unitalk.ui.harmony.HarmonyCheckingCardFragmentImpl;
 import com.unitalk.ui.harmony.HarmonyOneCardFragment;
 import com.unitalk.ui.home.HomeActivity;
+import com.unitalk.ui.lang.settings_model.LangMessageEvent;
 import com.unitalk.ui.recording.sampling.VoiceSamplingFragment;
 import com.unitalk.ui.settings.SettingsFragment;
 import com.unitalk.ui.videos.VideosFragment;
+import com.unitalk.utils.LocaleHelper;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
 public class MainActivity extends BaseActivity implements OnMainActivityCallback {
     private AHBottomNavigation mBottomNavigation;
+    private AHBottomNavigationItem item1;
+    private AHBottomNavigationItem item2;
+    private AHBottomNavigationItem item3;
+    private AHBottomNavigationItem item4;
     private String screenMovingFrom;
 
     @Override
@@ -42,6 +53,7 @@ public class MainActivity extends BaseActivity implements OnMainActivityCallback
         initBottomNavigationBar();
         App.getInstance().getSharedManager().setCardsState(CardsState.FOUR.name());
         initScreen();
+        EventBus.getDefault().register(this);
     }
 
     private void initBottomNavigationBar() {
@@ -49,10 +61,10 @@ public class MainActivity extends BaseActivity implements OnMainActivityCallback
         mBottomNavigation.setAccentColor(ContextCompat.getColor(this, R.color.bottomNavigationAccentColor));
 
         // Create items
-        final AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.label_voice_sampling, R.drawable.ic_record_voice_selector, R.color.colorGray);
-        final AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.solving_trouble_conflict, R.drawable.ic_daily_mood_selector, R.color.colorGray);
-        final AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.videos, R.drawable.ic_videos_selector, R.color.colorGray);
-        final AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.settings, R.drawable.ic_settings_selector, R.color.colorGray);
+        /*final AHBottomNavigationItem */item1 = new AHBottomNavigationItem(R.string.label_voice_sampling, R.drawable.ic_record_voice_selector, R.color.colorGray);
+        /*final AHBottomNavigationItem */item2 = new AHBottomNavigationItem(R.string.solving_trouble_conflict, R.drawable.ic_daily_mood_selector, R.color.colorGray);
+        /*final AHBottomNavigationItem */item3 = new AHBottomNavigationItem(R.string.videos, R.drawable.ic_videos_selector, R.color.colorGray);
+        /*final AHBottomNavigationItem */item4 = new AHBottomNavigationItem(R.string.settings, R.drawable.ic_settings_selector, R.color.colorGray);
 
         // Add items
         mBottomNavigation.addItem(item1);
@@ -125,5 +137,30 @@ public class MainActivity extends BaseActivity implements OnMainActivityCallback
     @Override
     public void startHarmonyCheckingCardFragment(@NonNull final List<String> moodCardList) {
         startFragmentTransactionFromRightToLeft(HarmonyCheckingCardFragmentImpl.newInstance(moodCardList));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe
+    public void updateViews(LangMessageEvent event) {
+        if (event.getType() == 1) {
+            Context context = LocaleHelper.onAttach(this);
+            Resources resources = context.getResources();
+
+            item1.setTitle(resources.getString(R.string.label_voice_sampling));
+            item2.setTitle(resources.getString(R.string.solving_trouble_conflict));
+            item3.setTitle(resources.getString(R.string.videos));
+            item4.setTitle(resources.getString(R.string.settings));
+            mBottomNavigation.refresh();
+        }
     }
 }

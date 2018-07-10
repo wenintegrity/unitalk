@@ -18,6 +18,8 @@ import com.unitalk.ui.callback.OnScreenNavigationCallback;
 import com.unitalk.ui.callback.OnShowMessageCallback;
 import com.unitalk.utils.LocaleHelper;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity implements OnScreenNavigationCallback, OnShowMessageCallback {
