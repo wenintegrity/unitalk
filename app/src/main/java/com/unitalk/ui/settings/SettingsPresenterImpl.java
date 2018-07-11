@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import com.unitalk.R;
 import com.unitalk.core.App;
 import com.unitalk.ui.BasePresenterImpl;
-import com.unitalk.ui.settings.SettingsView;
 
 public class SettingsPresenterImpl extends BasePresenterImpl implements SettingsPresenter<SettingsView> {
     private static final float MAX_VOICE_LEVEL = 0;

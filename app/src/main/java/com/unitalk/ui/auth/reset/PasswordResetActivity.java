@@ -5,12 +5,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 import com.unitalk.R;
-import com.unitalk.utils.customview.PasswordResetErrorDialog;
-import com.unitalk.utils.customview.PasswordResetGoBackDialog;
 import com.unitalk.ui.auth.BaseAuthActivity;
 import com.unitalk.ui.auth.main.AuthMainActivity;
 import com.unitalk.utils.FieldsValidator;
 import com.unitalk.utils.ViewUpdaterKt;
+import com.unitalk.utils.customview.PasswordResetErrorDialog;
+import com.unitalk.utils.customview.PasswordResetGoBackDialog;
 
 import butterknife.OnClick;
 

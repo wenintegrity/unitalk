@@ -20,9 +20,7 @@ import com.unitalk.enums.CardsState;
 import com.unitalk.ui.BaseFragment;
 import com.unitalk.ui.callback.OnActionCallback;
 import com.unitalk.ui.callback.OnMainActivityCallback;
-import com.unitalk.ui.videos.VideosPresenter;
-import com.unitalk.ui.videos.VideosPresenterImpl;
-import com.unitalk.ui.videos.VideosView;
+import com.unitalk.ui.lang.FragmentUpdateEvent;
 import com.unitalk.utils.LocaleHelper;
 
 import java.util.concurrent.TimeUnit;
@@ -33,7 +31,7 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
-public class VideosFragment extends BaseFragment implements VideosView, MediaPlayer.OnCompletionListener, OnActionCallback {
+public class VideosFragment extends BaseFragment implements VideosView, MediaPlayer.OnCompletionListener, OnActionCallback, FragmentUpdateEvent {
     private static final String JS_INJECTION_URL = "javascript:document.getElementsByTagName('video')[0].onended=function(){android.onPageEnded()}";
     private static final String JS_INTERFACE_NAME = "android";
     private static final int JS_INJECTION_DELAY = 3000;
@@ -153,12 +151,12 @@ public class VideosFragment extends BaseFragment implements VideosView, MediaPla
     @Override
     public void onResume() {
         super.onResume();
-        updateViews();
+        updateView();
     }
 
-    private void updateViews() {
-        Context context = LocaleHelper.onAttach(getContext());
-        Resources resources = context.getResources();
+    @Override
+    public void updateView() {
+        Resources resources = LocaleHelper.getResources(getContext());
         tvSkipVideo.setText(resources.getString(R.string.skip));
     }
 }

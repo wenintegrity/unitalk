@@ -1,8 +1,8 @@
 package com.unitalk.ui.lang;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -38,6 +38,11 @@ public class LangActivity extends AppCompatActivity implements LangView {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
+    }
+
+    @Override
+    public void updateList() {
+        recyclerView.getAdapter().notifyDataSetChanged();
     }
 
     @Override

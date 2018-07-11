@@ -17,12 +17,12 @@
 
     <TextView
         android:id="@+id/tvSaySomething"
-        app:layout_constraintStart_toStartOf="@id/pbCircle"
-        app:layout_constraintEnd_toEndOf="@id/pbCircle"
-        app:layout_constraintTop_toTopOf="@id/pbCircle"
-        app:layout_constraintBottom_toBottomOf="@id/pbCircle"
+        style="@style/Roboto.White.24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/say_aaa"
-        style="@style/Roboto.White.24" />
+        app:layout_constraintBottom_toBottomOf="@id/pbCircle"
+        app:layout_constraintEnd_toEndOf="@id/pbCircle"
+        app:layout_constraintStart_toStartOf="@id/pbCircle"
+        app:layout_constraintTop_toTopOf="@id/pbCircle" />
 </android.support.constraint.ConstraintLayout>

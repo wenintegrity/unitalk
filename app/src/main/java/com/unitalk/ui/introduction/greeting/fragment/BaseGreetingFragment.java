@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 import com.unitalk.R;
 import com.unitalk.ui.BaseFragment;
-import com.unitalk.ui.introduction.greeting.OnViewPagerNavigation;
 import com.unitalk.ui.introduction.greeting.GreetingActivity;
+import com.unitalk.ui.introduction.greeting.OnViewPagerNavigation;
 
 import butterknife.BindView;
 import butterknife.OnClick;

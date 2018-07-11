@@ -15,7 +15,6 @@ import com.unitalk.core.App;
 import com.unitalk.enums.ScreenType;
 import com.unitalk.ui.BaseActivity;
 import com.unitalk.ui.MainActivity;
-import com.unitalk.ui.home.HomeView;
 import com.unitalk.utils.ViewUpdaterKt;
 
 import butterknife.BindView;

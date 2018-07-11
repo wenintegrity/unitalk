@@ -1,6 +1,7 @@
 package com.unitalk.ui.recording.sampling;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.widget.RelativeLayout;
 
 import com.unitalk.R;
@@ -8,15 +9,17 @@ import com.unitalk.core.App;
 import com.unitalk.enums.CardsState;
 import com.unitalk.ui.callback.OnScreenNavigationCallback;
 import com.unitalk.ui.callback.OnShowMessageCallback;
+import com.unitalk.ui.lang.FragmentUpdateEvent;
 import com.unitalk.ui.recording.BaseRecordingFragment;
 import com.unitalk.ui.result.ResultFragment;
 import com.unitalk.ui.videos.VideosFragment;
+import com.unitalk.utils.LocaleHelper;
 import com.unitalk.utils.ViewUpdaterKt;
 import com.unitalk.utils.customview.StepsView;
 
 import butterknife.BindView;
 
-public class VoiceSamplingFragment extends BaseRecordingFragment implements VoiceSamplingView, OnShowMessageCallback {
+public class VoiceSamplingFragment extends BaseRecordingFragment implements VoiceSamplingView, OnShowMessageCallback, FragmentUpdateEvent {
     private static final int[] BACKGROUNDS = {
             R.drawable.ic_background_first,
             R.drawable.ic_background_second,
@@ -40,7 +43,7 @@ public class VoiceSamplingFragment extends BaseRecordingFragment implements Voic
     @Override
     protected void init() {
         if (App.getInstance().getSharedManager().getCardsState().equals(CardsState.NONE.name())) {
-            tvTitle.setText(R.string.label_voice_sampling);
+            tvTitle.setText(LocaleHelper.getResources(getContext()).getString(R.string.label_voice_sampling));
         }
         for (int i = 0; i < STEPS_NUMBER; i++) {
             stepsView.setStepState(i, false);
@@ -97,7 +100,24 @@ public class VoiceSamplingFragment extends BaseRecordingFragment implements Voic
     }
 
     private void showHint() {
-        tvHintAndError.setText(R.string.think_and_concentrate);
+        tvHintAndError.setText(LocaleHelper.getResources(getContext()).getString(R.string.think_and_concentrate));
         ViewUpdaterKt.showViews(tvHintAndError);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateView();
+    }
+
+    @Override
+    public void updateView() {
+        Resources resources = LocaleHelper.getResources(getContext());
+        tvTitle.setText(resources.getString(R.string.solving_trouble_conflict));
+        tvHintAndError.setText(resources.getString(R.string.think_and_concentrate));
+        tvRecordingHint.setText(resources.getString(R.string.press_to_start));
+        tvVoiceSamplingLabel.setText(resources.getString(R.string.label_voice_sampling));
+        tvBipCounter.setText(resources.getString(R.string.concentrating_second));
+        tvSaySomething.setText(resources.getString(R.string.say_aaa));
     }
 }

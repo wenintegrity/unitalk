@@ -18,8 +18,6 @@ import com.unitalk.ui.callback.OnScreenNavigationCallback;
 import com.unitalk.ui.callback.OnShowMessageCallback;
 import com.unitalk.utils.LocaleHelper;
 
-import org.greenrobot.eventbus.EventBus;
-
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity implements OnScreenNavigationCallback, OnShowMessageCallback {
@@ -45,7 +43,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnScreen
             super.onBackPressed();
         } else {
             final View view = getRootView();
-            final Snackbar snackbar = Snackbar.make(view, getString(R.string.toast_exit_helper), Snackbar.LENGTH_LONG);
+            final Snackbar snackbar = Snackbar.make(view, LocaleHelper.getResources(this).getString(R.string.toast_exit_helper), Snackbar.LENGTH_LONG);
             snackbar.show();
         }
         backPressedMillis = System.currentTimeMillis();
@@ -103,6 +101,6 @@ public abstract class BaseActivity extends AppCompatActivity implements OnScreen
 
     @Override
     public void showMessage(@StringRes final int messageID) {
-        Toast.makeText(this, messageID, Toast.LENGTH_SHORT).show();
+        Toast.makeText(LocaleHelper.onAttach(this), messageID, Toast.LENGTH_SHORT).show();
     }
 }

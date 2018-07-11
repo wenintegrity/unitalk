@@ -28,5 +28,6 @@ public class LangPresenterImpl implements LangPresenter {
     public void changeLang(Lang lang) {
         LocaleHelper.setLocale(context, lang.getLocale());
         EventBus.getDefault().post(new LangMessageEvent(LangMessageEvent.UPDATE_LANG));
+        view.updateList();
     }
 }

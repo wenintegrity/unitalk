@@ -1,5 +1,6 @@
 package com.unitalk.ui.harmony;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,7 +17,9 @@ import com.unitalk.enums.CardsState;
 import com.unitalk.enums.MoodCardsModel;
 import com.unitalk.ui.BaseFragment;
 import com.unitalk.ui.callback.OnScreenNavigationCallback;
+import com.unitalk.ui.lang.FragmentUpdateEvent;
 import com.unitalk.ui.recording.sampling.VoiceSamplingFragment;
+import com.unitalk.utils.LocaleHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +29,7 @@ import butterknife.BindView;
 import io.reactivex.Completable;
 import io.reactivex.disposables.Disposable;
 
-public class HarmonyOneCardFragment extends BaseFragment {
+public class HarmonyOneCardFragment extends BaseFragment implements FragmentUpdateEvent {
     private static final int SPLASH_DELAY = 3;
     private Disposable splashTimerDisposable;
     private static final String CARD_NAME_KEY = "CARD_NAME_KEY";
@@ -36,6 +39,10 @@ public class HarmonyOneCardFragment extends BaseFragment {
     TextView tvMoodCardTitle;
     @BindView(R.id.ivMoodCard)
     ImageView ivMoodCard;
+    @BindView(R.id.tv_harmony_chk_cards)
+    TextView tv_harmony_chk_cards;
+    @BindView(R.id.tv_cards_chk_title)
+    TextView tv_cards_chk_title;
 
     private MoodCardsModel moodCardsModel;
     private OnScreenNavigationCallback onScreenNavigationCallback;
@@ -122,5 +129,19 @@ public class HarmonyOneCardFragment extends BaseFragment {
         list.add(MoodCardsModel.ABLE_CONFIDENT.getName());
         list.add(MoodCardsModel.KIND_LOVING.getName());
         return list;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateView();
+    }
+
+    @Override
+    public void updateView() {
+        Context context = LocaleHelper.onAttach(getContext());
+        Resources resources = context.getResources();
+        tv_harmony_chk_cards.setText(resources.getString(R.string.harmony_checking));
+        tv_cards_chk_title.setText(resources.getString(R.string.harmony_checking_cards_title));
     }
 }

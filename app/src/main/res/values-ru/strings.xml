@@ -46,7 +46,7 @@
     <string name="think_and_concentrate">Подумайте и сконцентрируйтесь на\nвашем текущем конфликте.</string>
 
     <string name="sign_up_title_auth">Войти</string>
-    <string name="sign_up_title_descr_auth">AИ откройте все наши курсы,\nчтобы держать все под контролем</string>
+    <string name="sign_up_title_descr_auth">И откройте все наши курсы,\nчтобы держать все под контролем</string>
     <string name="log_in_with_facebook">ВОЙТИ ЧЕРЕЗ FACEBOOK</string>
     <string name="log_in_with_google">ВОЙТИ ЧЕРЕЗ GOOGLE</string>
     <string name="log_in_or_sign_up_with_email">ВОЙТИ ЧЕРЕЗ EMAIL</string>

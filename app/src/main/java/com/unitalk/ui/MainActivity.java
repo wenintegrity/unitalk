@@ -1,6 +1,5 @@
 package com.unitalk.ui;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -153,8 +152,7 @@ public class MainActivity extends BaseActivity implements OnMainActivityCallback
     @Subscribe
     public void updateViews(LangMessageEvent event) {
         if (event.getType() == 1) {
-            Context context = LocaleHelper.onAttach(this);
-            Resources resources = context.getResources();
+            Resources resources = LocaleHelper.getResources(this);
 
             item1.setTitle(resources.getString(R.string.label_voice_sampling));
             item2.setTitle(resources.getString(R.string.solving_trouble_conflict));

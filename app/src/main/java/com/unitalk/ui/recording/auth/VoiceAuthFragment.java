@@ -1,6 +1,7 @@
 package com.unitalk.ui.recording.auth;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,12 +9,14 @@ import android.view.View;
 
 import com.unitalk.R;
 import com.unitalk.ui.introduction.authed.VoiceAuthedActivity;
+import com.unitalk.ui.lang.FragmentUpdateEvent;
 import com.unitalk.ui.recording.BaseRecordingFragment;
+import com.unitalk.utils.LocaleHelper;
 import com.unitalk.utils.customview.StepsView;
 
 import butterknife.BindView;
 
-public class VoiceAuthFragment extends BaseRecordingFragment {
+public class VoiceAuthFragment extends BaseRecordingFragment implements FragmentUpdateEvent {
     @BindView(R.id.stepsView)
     StepsView stepsView;
 
@@ -37,7 +40,7 @@ public class VoiceAuthFragment extends BaseRecordingFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tvTitle.setText(R.string.label_voice_sampling);
+        tvTitle.setText(LocaleHelper.getResources(getContext()).getString(R.string.label_voice_sampling));
     }
 
     public void onSampleRecorded(final int step) {
@@ -62,5 +65,22 @@ public class VoiceAuthFragment extends BaseRecordingFragment {
         final Intent intent = getActivity().getIntent();
         startActivity(intent);
         getActivity().finish();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateView();
+    }
+
+    @Override
+    public void updateView() {
+        Resources resources = LocaleHelper.getResources(getContext());
+        tvTitle.setText(resources.getString(R.string.solving_trouble_conflict));
+        tvHintAndError.setText(resources.getString(R.string.think_and_concentrate));
+        tvRecordingHint.setText(resources.getString(R.string.press_to_start));
+        tvVoiceSamplingLabel.setText(resources.getString(R.string.label_voice_sampling));
+        tvBipCounter.setText(resources.getString(R.string.concentrating_second));
+        tvSaySomething.setText(resources.getString(R.string.say_aaa));
     }
 }

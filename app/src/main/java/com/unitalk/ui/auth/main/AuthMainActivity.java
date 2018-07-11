@@ -1,6 +1,5 @@
 package com.unitalk.ui.auth.main;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -58,6 +57,8 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     TextView signUpTitleDetail;
     @BindView(R.id.tvAlreadyHaveAccount)
     TextView tvAlreadyHaveAccount;
+    @BindView(R.id.tvTermsAndConditionsLabel)
+    TextView tvTermsAndConditionsLabel;
 
 
     @Override
@@ -147,13 +148,11 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     @Override
     protected void onResume() {
         super.onResume();
-        //updateViews();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        //EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -166,8 +165,7 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     public void updateViews(LangMessageEvent event) {
 
         if (event.getType() == 1) {
-            Context context = LocaleHelper.onAttach(this);
-            Resources resources = context.getResources();
+            Resources resources = LocaleHelper.getResources(this);
 
             tvLogInInstead.setText(resources.getString(R.string.log_in_instead_auth));
             tvTermsAndConditions.setText(resources.getString(R.string.terms_and_conditions_auth));
@@ -175,6 +173,7 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
             signUpTitle.setText(resources.getString(R.string.sign_up_title_auth));
             signUpTitleDetail.setText(resources.getString(R.string.sign_up_title_descr_auth));
             tvAlreadyHaveAccount.setText(resources.getString(R.string.already_have_an_account_auth));
+            tvTermsAndConditionsLabel.setText(resources.getString(R.string.by_signing_up_i_accept_the_auth));
         }
     }
 }

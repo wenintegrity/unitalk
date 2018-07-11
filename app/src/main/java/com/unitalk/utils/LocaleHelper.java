@@ -8,10 +8,6 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.preference.PreferenceManager;
 
-import com.unitalk.ui.lang.settings_model.LangMessageEvent;
-
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.Locale;
 
 public class LocaleHelper {
@@ -84,5 +80,8 @@ public class LocaleHelper {
         return context;
     }
 
+    public static Resources getResources(Context context) {
+        return LocaleHelper.onAttach(context).getResources();
+    }
 
 }

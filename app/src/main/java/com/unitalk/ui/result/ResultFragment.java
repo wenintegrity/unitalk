@@ -1,6 +1,7 @@
 package com.unitalk.ui.result;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,18 +12,21 @@ import com.unitalk.R;
 import com.unitalk.ui.BaseFragment;
 import com.unitalk.ui.callback.OnScreenNavigationCallback;
 import com.unitalk.ui.home.HomeActivity;
-import com.unitalk.ui.result.ResultPresenter;
-import com.unitalk.ui.result.ResultPresenterImpl;
-import com.unitalk.ui.result.ResultView;
+import com.unitalk.ui.lang.FragmentUpdateEvent;
+import com.unitalk.utils.LocaleHelper;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class ResultFragment extends BaseFragment implements ResultView {
+public class ResultFragment extends BaseFragment implements ResultView, FragmentUpdateEvent {
     @BindView(R.id.tv_percents_result)
     TextView tvResultHint;
     @BindView(R.id.tvOK)
     TextView tvOK;
+    @BindView(R.id.tvResultLabel)
+    TextView tvResultLabel;
+    @BindView(R.id.tvHarmonyChkResult)
+    TextView tvHarmonyChkResult;
 
     private ResultPresenter presenter;
     private OnScreenNavigationCallback onScreenNavigationCallback;
@@ -67,5 +71,19 @@ public class ResultFragment extends BaseFragment implements ResultView {
         if (onScreenNavigationCallback != null) {
             onScreenNavigationCallback.moveToScreenWithoutBack(HomeActivity.class);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateView();
+    }
+
+    @Override
+    public void updateView() {
+        Resources resources = LocaleHelper.getResources(getContext());
+        tvOK.setText(resources.getString(R.string.ok));
+        tvResultLabel.setText(resources.getString(R.string.harmony_result));
+        tvHarmonyChkResult.setText(resources.getString(R.string.harmony_checking));
     }
 }

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.unitalk.ui.callback.OnShowMessageCallback;
+import com.unitalk.utils.LocaleHelper;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -34,6 +35,6 @@ public abstract class BaseFragment extends Fragment implements OnShowMessageCall
 
     @Override
     public void showMessage(final int messageID) {
-        Toast.makeText(getContext(), messageID, Toast.LENGTH_SHORT).show();
+        Toast.makeText(LocaleHelper.onAttach(getContext()), messageID, Toast.LENGTH_SHORT).show();
     }
 }

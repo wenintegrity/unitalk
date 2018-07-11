@@ -17,6 +17,7 @@
         android:text="@string/harmony_checking" />
 
     <TextView
+        android:id="@+id/tvResultLabel"
         style="@style/Roboto.White.22"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

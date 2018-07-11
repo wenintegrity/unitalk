@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.unitalk.R;
 import com.unitalk.ui.BaseActivity;
-import com.unitalk.ui.introduction.greeting.OnViewPagerNavigation;
 import com.unitalk.ui.introduction.greeting.adapter.GreetingFragmentAdapter;
 
 public class GreetingActivity extends BaseActivity implements OnViewPagerNavigation {

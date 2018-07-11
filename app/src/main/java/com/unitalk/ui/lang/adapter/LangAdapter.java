@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.unitalk.R;
-import com.unitalk.ui.lang.settings_model.Lang;
 import com.unitalk.ui.lang.LangPresenter;
+import com.unitalk.ui.lang.settings_model.Lang;
 import com.unitalk.utils.LocaleHelper;
 
 import java.util.ArrayList;
@@ -37,8 +37,13 @@ public class LangAdapter extends RecyclerView.Adapter<LangHolder> {
     @Override
     public void onBindViewHolder(@NonNull LangHolder holder, int position) {
         holder.langTextItem.setText(langList.get(position).getName());
-        //holder.engLabel.setText(langList.get(position).getEngName());
-        holder.engLabel.setText(LocaleHelper.getLanguage(context));
+        holder.engLabel.setText(langList.get(position).getEngName());
+        //holder.engLabel.setText(LocaleHelper.getLanguage(context));
+
+        holder.checkView.setVisibility(View.INVISIBLE);
+        if (LocaleHelper.getLanguage(context).toLowerCase().equals(langList.get(position).getLocale())) {
+            holder.checkView.setVisibility(View.VISIBLE);
+        }
 
         holder.setOnItemClickListener(new ItemClick() {
             @Override
