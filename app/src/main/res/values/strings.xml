@@ -125,4 +125,5 @@
     <string name="user_exists">User with this email already exists!</string>
     <string name="user_not_found">User with this email was not found!</string>
     <string name="change_language">Change language</string>
+    <string name="log_out">Log Out</string>
 </resources>

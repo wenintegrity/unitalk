@@ -5,6 +5,7 @@ import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInResult
 import com.google.android.gms.common.api.GoogleApiClient
+import com.unitalk.core.App
 import com.unitalk.core.DeviceIdChangeManager
 import com.unitalk.ui.BasePresenterImpl
 import com.unitalk.ui.callback.OnFacebookAuthCallback
@@ -56,6 +57,14 @@ class AuthMainPresenterImpl(private val view: AuthMainView, private val onShowMe
         val userEmail = acct?.email
         if (userEmail != null) {
             DeviceIdChangeManager.setEmailOrUniqueId(userEmail)
+        }
+    }
+
+    override fun checkCurrentUser() {
+        if (!App.getInstance().sharedManager.firstLoginState) {
+            if (!App.getInstance().sharedManager.uniqueID.isEmpty()) {
+                view.onAuthSuccessful()
+            }
         }
     }
 }

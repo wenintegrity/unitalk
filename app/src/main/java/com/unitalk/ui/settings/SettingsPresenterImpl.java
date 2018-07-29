@@ -2,6 +2,8 @@ package com.unitalk.ui.settings;
 
 import android.support.annotation.NonNull;
 
+import com.facebook.AccessToken;
+import com.facebook.login.LoginManager;
 import com.unitalk.R;
 import com.unitalk.core.App;
 import com.unitalk.ui.BasePresenterImpl;
@@ -32,5 +34,13 @@ public class SettingsPresenterImpl extends BasePresenterImpl implements Settings
 
     private boolean isVoiceLevelCorrect(final float voiceLevel) {
         return voiceLevel >= MIN_VOICE_LEVEL && voiceLevel <= MAX_VOICE_LEVEL;
+    }
+
+    @Override
+    public void logOut() {
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        if (accessToken != null && !accessToken.isExpired()) {
+            LoginManager.getInstance().logOut();
+        }
     }
 }

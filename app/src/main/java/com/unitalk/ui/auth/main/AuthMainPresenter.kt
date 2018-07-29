@@ -9,4 +9,5 @@ interface AuthMainPresenter<AuthMainView> : BasePresenter {
     fun checkCurrentGoogleAcc(googleApiClient: GoogleApiClient)
     fun handleGoogleResult(requestCode: Int, data: Intent)
     fun goToFacebookAuthResult(requestCode: Int, resultCode: Int, data: Intent)
+    fun checkCurrentUser()
 }

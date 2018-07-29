@@ -13,9 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.unitalk.R;
+import com.unitalk.core.App;
 import com.unitalk.ui.BaseFragment;
+import com.unitalk.ui.auth.main.AuthMainActivity;
 import com.unitalk.ui.lang.FragmentUpdateEvent;
 import com.unitalk.ui.lang.LangActivity;
+import com.unitalk.utils.FacebookAuthManager;
 import com.unitalk.utils.LocaleHelper;
 
 import butterknife.BindView;
@@ -28,12 +31,16 @@ public class SettingsFragment extends BaseFragment implements SettingsView, Frag
     EditText etVoiceLevel;
     @BindView(R.id.btn_lang)
     FrameLayout btnLang;
+    @BindView(R.id.btn_logOut)
+    FrameLayout btnLogOut;
     @BindView(R.id.voice_level_label)
     TextView voiceLevelLabel;
     @BindView(R.id.btnVoiceLevelSave)
     ImageView btnVoiceLevelSave;
     @BindView(R.id.btn_lang_label)
     TextView btnLangLabel;
+    @BindView(R.id.btn_logOut_label)
+    TextView btnLogOutLabel;
 
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
@@ -67,10 +74,21 @@ public class SettingsFragment extends BaseFragment implements SettingsView, Frag
         }
     }
 
-    @OnClick(R.id.btn_lang)
-    public void click() {
-        Intent intent = new Intent(getContext(), LangActivity.class);
-        startActivity(intent);
+    @OnClick({R.id.btn_lang, R.id.btn_logOut})
+    public void click(View v) {
+
+        switch (v.getId()) {
+            case R.id.btn_lang:
+                Intent intentLang = new Intent(getContext(), LangActivity.class);
+                startActivity(intentLang);
+                break;
+            case R.id.btn_logOut:
+                App.getInstance().getSharedManager().setUniqueID("");
+                Intent intentLogOut = new Intent(getContext(), AuthMainActivity.class);
+                intentLogOut.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intentLogOut);
+                break;
+        }
     }
 
     @Override
@@ -83,5 +101,6 @@ public class SettingsFragment extends BaseFragment implements SettingsView, Frag
         Resources resources = LocaleHelper.getResources(getContext());
         voiceLevelLabel.setText(resources.getString(R.string.voice_level_db));
         btnLangLabel.setText(resources.getString(R.string.change_language));
+        btnLogOutLabel.setText(resources.getString(R.string.log_out));
     }
 }

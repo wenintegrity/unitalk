@@ -17,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.unitalk.BuildConfig;
 import com.unitalk.R;
+import com.unitalk.core.App;
 import com.unitalk.ui.BaseActivity;
 import com.unitalk.ui.auth.login.LoginActivity;
 import com.unitalk.ui.auth.signup.SignupActivity;
@@ -89,7 +90,8 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     @Override
     public void onStart() {
         super.onStart();
-        presenter.checkCurrentGoogleAcc(googleApiClient);
+        //presenter.checkCurrentGoogleAcc(googleApiClient);
+        presenter.checkCurrentUser();
     }
 
     @OnClick({R.id.btnGoogle, R.id.llSignup, R.id.tvLoginInsteadAuth, R.id.tvLang})
@@ -100,7 +102,9 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
                 startActivityForResult(signInIntent, RC_SIGN_IN);
                 break;
             case R.id.llSignup:
-                moveToScreen(SignupActivity.class);
+                //moveToScreen(SignupActivity.class);
+                String str = App.getInstance().getSharedManager().getUniqueID();
+                Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tvLoginInsteadAuth:
                 moveToScreen(LoginActivity.class);
