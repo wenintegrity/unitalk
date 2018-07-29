@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">SwitchMyMind</string>
     <string name="rec">ЗАПИСЬ</string>
     <string name="harmony_result">Спасибо!\nГармония увеличена на % </string>
     <string name="no_internet">К сожалению, нет подключения к серверу!</string>

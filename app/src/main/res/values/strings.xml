@@ -24,8 +24,11 @@
     <string name="card_view_congratulations">Congratulations!</string>
 
     <!--FACEBOOK RES-->
-    <string name="facebook_app_id" translatable="false">2005262753130055</string>
-    <string name="fb_login_protocol_scheme" translatable="false">fb2005262753130055</string>
+    <!--<string name="facebook_app_id" translatable="false">2005262753130055</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb2005262753130055</string>-->
+
+    <string name="facebook_app_id" translatable="false">2240490219313342</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb2240490219313342</string>
 
     <string name="splashTitle">UniTalk</string>
     <string name="splashSubtitle">Application which really helps</string>

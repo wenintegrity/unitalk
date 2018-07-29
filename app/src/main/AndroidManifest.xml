@@ -97,6 +97,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.lang.LangActivity" />
+        <activity android:name=".ui.auth.main.auth_test.TestAuthActivity"></activity>
     </application>
 
 </manifest>
