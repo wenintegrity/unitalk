@@ -3,12 +3,20 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    signingConfigs {
+    /*signingConfigs {
         config {
             keyAlias 'unitalk_keystore'
             keyPassword 'R2o0m0y1'
-            storeFile file('/home/user/NewStudioProjects/unitalk_keys.jks')
+            storeFile file('config/unitalk_keys.jks')
             storePassword 'R2o0m0y1'
+        }
+    }*/
+    signingConfigs {
+        config {
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file('config/unitalk_keys.jks')
+            storePassword RELEASE_STORE_PASSWORD
         }
     }
     compileSdkVersion 27
