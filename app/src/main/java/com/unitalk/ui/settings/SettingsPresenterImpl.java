@@ -4,9 +4,15 @@ import android.support.annotation.NonNull;
 
 import com.facebook.AccessToken;
 import com.facebook.login.LoginManager;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.unitalk.R;
 import com.unitalk.core.App;
 import com.unitalk.ui.BasePresenterImpl;
+import com.unitalk.ui.auth.main.AuthMainActivity;
+import com.unitalk.utils.GoogleAuthManager;
+
+import org.jetbrains.annotations.NotNull;
 
 public class SettingsPresenterImpl extends BasePresenterImpl implements SettingsPresenter<SettingsView> {
     private static final float MAX_VOICE_LEVEL = 0;
@@ -41,6 +47,11 @@ public class SettingsPresenterImpl extends BasePresenterImpl implements Settings
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         if (accessToken != null && !accessToken.isExpired()) {
             LoginManager.getInstance().logOut();
+            App.getInstance().getSharedManager().setUniqueID("");
+            view.goToActivity(AuthMainActivity.class);
+        }else {
+            GoogleAuthManager.getManagerInstance().signOut();
+            view.goToActivity(AuthMainActivity.class);
         }
     }
 }

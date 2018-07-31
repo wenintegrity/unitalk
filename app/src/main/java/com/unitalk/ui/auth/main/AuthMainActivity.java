@@ -13,8 +13,13 @@ import android.widget.Toast;
 
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.unitalk.BuildConfig;
 import com.unitalk.R;
 import com.unitalk.core.App;
@@ -26,6 +31,7 @@ import com.unitalk.ui.home.HomeActivity;
 import com.unitalk.ui.introduction.authinfo.VoiceInfoActivity;
 import com.unitalk.ui.lang.LangActivity;
 import com.unitalk.ui.lang.settings_model.LangMessageEvent;
+import com.unitalk.utils.GoogleAuthManager;
 import com.unitalk.utils.LocaleHelper;
 
 import org.greenrobot.eventbus.EventBus;
@@ -38,7 +44,7 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     private static final String EMAIL_PERMISSION = "email";
     private static final int RC_SIGN_IN = 7;
     private AuthMainPresenter<AuthMainView> presenter;
-    private GoogleApiClient googleApiClient;
+    private GoogleSignInClient googleApiClient;
 
     @BindView(R.id.login_button)
     LoginButton loginButton;
@@ -61,7 +67,6 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     @BindView(R.id.tvTermsAndConditionsLabel)
     TextView tvTermsAndConditionsLabel;
 
-
     @Override
     protected int provideLayout() {
         return R.layout.activity_auth;
@@ -78,7 +83,8 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
         loginButton.setReadPermissions(EMAIL_PERMISSION);
         presenter = new AuthMainPresenterImpl(this, this);
         presenter.createFacebookAuth();
-        initGoogleAuth();
+        //initGoogleAuth();
+        googleApiClient = GoogleAuthManager.getManagerInstance().getGoogleApiClient(this);
     }
 
     @Override
@@ -90,15 +96,22 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     @Override
     public void onStart() {
         super.onStart();
+        //googleApiClient.connect();
         //presenter.checkCurrentGoogleAcc(googleApiClient);
-        presenter.checkCurrentUser();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (account != null) {
+            String s = account.getEmail();
+        }
+        //presenter.checkCurrentUser();
     }
 
     @OnClick({R.id.btnGoogle, R.id.llSignup, R.id.tvLoginInsteadAuth, R.id.tvLang})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnGoogle:
-                final Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                //final Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                //startActivityForResult(signInIntent, RC_SIGN_IN);
+                Intent signInIntent = googleApiClient.getSignInIntent();
                 startActivityForResult(signInIntent, RC_SIGN_IN);
                 break;
             case R.id.llSignup:
@@ -119,7 +132,8 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     public void onAuthSuccessful() {
         Toast.makeText(this, R.string.welcome, Toast.LENGTH_SHORT).show();
         if (getFirstLogin()) {
-            moveToScreenWithoutBack(VoiceInfoActivity.class);
+            //moveToScreenWithoutBack(VoiceInfoActivity.class);
+            moveToScreenWithoutBack(HomeActivity.class);
         } else {
             moveToScreenWithoutBack(HomeActivity.class);
         }
@@ -136,17 +150,6 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
         presenter.goToFacebookAuthResult(requestCode, resultCode, data);
         presenter.handleGoogleResult(requestCode, data);
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void initGoogleAuth() {
-        final GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, connectionResult -> {
-                })
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
     }
 
     @Override

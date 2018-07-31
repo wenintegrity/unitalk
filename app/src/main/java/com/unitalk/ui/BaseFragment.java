@@ -37,4 +37,6 @@ public abstract class BaseFragment extends Fragment implements OnShowMessageCall
     public void showMessage(final int messageID) {
         Toast.makeText(LocaleHelper.onAttach(getContext()), messageID, Toast.LENGTH_SHORT).show();
     }
+
+
 }
