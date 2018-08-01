@@ -1,7 +1,11 @@
 package com.unitalk.ui.auth.main
 
+import android.content.Context
 import android.content.Intent
+import com.facebook.AccessToken
+import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.Auth
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInResult
 import com.google.android.gms.common.api.GoogleApiClient
@@ -20,7 +24,8 @@ class AuthMainPresenterImpl(private val view: AuthMainView, private val onShowMe
         facebookAuthManager = FacebookAuthManager(this, onShowMessageCallback)
     }
 
-    override fun checkCurrentGoogleAcc(googleApiClient: GoogleApiClient) {
+    /*override fun checkCurrentGoogleAcc(googleApiClient: GoogleApiClient) {
+
         val opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient)
         if (opr.isDone) {
             val result = opr.get()
@@ -28,6 +33,11 @@ class AuthMainPresenterImpl(private val view: AuthMainView, private val onShowMe
         } else {
             opr.setResultCallback { googleSignInResult -> handleSignInResult(googleSignInResult) }
         }
+    }*/
+
+    override fun checkCurrentGoogleAcc(googleApiClient: GoogleSignInAccount) {
+        addMailInUniqueId(googleApiClient)
+        view.onAuthSuccessful()
     }
 
     override fun handleGoogleResult(requestCode: Int, data: Intent) {
@@ -60,9 +70,20 @@ class AuthMainPresenterImpl(private val view: AuthMainView, private val onShowMe
         }
     }
 
-    override fun checkCurrentUser() {
-        if (!App.getInstance().sharedManager.firstLoginState) {
+    override fun checkCurrentUser(context: Context) {
+        /*if (!App.getInstance().sharedManager.firstLoginState) {
             if (!App.getInstance().sharedManager.uniqueID.isEmpty()) {
+                view.onAuthSuccessful()
+            }
+        }*/
+
+        val account = GoogleSignIn.getLastSignedInAccount(context)
+        if (account != null) {
+            addMailInUniqueId(account)
+            view.onAuthSuccessful()
+        }else {
+            val accessToken = AccessToken.getCurrentAccessToken()
+            if (accessToken != null && !accessToken.isExpired) run {
                 view.onAuthSuccessful()
             }
         }

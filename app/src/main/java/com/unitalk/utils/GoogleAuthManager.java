@@ -44,12 +44,9 @@ public class GoogleAuthManager {
     }
 
     public void signOut() {
-        googleApiClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    App.getInstance().getSharedManager().setUniqueID("");
-                }
+        googleApiClient.signOut().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                App.getInstance().getSharedManager().setUniqueID("");
             }
         });
     }

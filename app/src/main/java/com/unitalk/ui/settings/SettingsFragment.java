@@ -1,6 +1,5 @@
 package com.unitalk.ui.settings;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -14,13 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.unitalk.R;
-import com.unitalk.core.App;
 import com.unitalk.ui.BaseActivity;
 import com.unitalk.ui.BaseFragment;
-import com.unitalk.ui.auth.main.AuthMainActivity;
 import com.unitalk.ui.lang.FragmentUpdateEvent;
 import com.unitalk.ui.lang.LangActivity;
-import com.unitalk.utils.FacebookAuthManager;
 import com.unitalk.utils.LocaleHelper;
 
 import org.jetbrains.annotations.NotNull;
@@ -83,16 +79,11 @@ public class SettingsFragment extends BaseFragment implements SettingsView, Frag
 
         switch (v.getId()) {
             case R.id.btn_lang:
-                //Intent intentLang = new Intent(getContext(), LangActivity.class);
-                //startActivity(intentLang);
-                App.getInstance().getSharedManager().setUniqueID("");
+                Intent intentLang = new Intent(getContext(), LangActivity.class);
+                startActivity(intentLang);
                 break;
             case R.id.btn_logOut:
                 presenter.logOut();
-                //Intent intentLogOut = new Intent(getContext(), AuthMainActivity.class);
-                //intentLogOut.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                //startActivity(intentLogOut);
-                //goToActivity(AuthMainActivity.class);
                 break;
         }
     }
@@ -113,7 +104,7 @@ public class SettingsFragment extends BaseFragment implements SettingsView, Frag
     @Override
     public void goToActivity(@NotNull Class<? extends BaseActivity> obj) {
         Intent intentLogOut = new Intent(getContext(), obj);
-        intentLogOut.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intentLogOut.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intentLogOut);
     }
 }

@@ -83,7 +83,6 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
         loginButton.setReadPermissions(EMAIL_PERMISSION);
         presenter = new AuthMainPresenterImpl(this, this);
         presenter.createFacebookAuth();
-        //initGoogleAuth();
         googleApiClient = GoogleAuthManager.getManagerInstance().getGoogleApiClient(this);
     }
 
@@ -98,11 +97,11 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
         super.onStart();
         //googleApiClient.connect();
         //presenter.checkCurrentGoogleAcc(googleApiClient);
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        /*GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
-            String s = account.getEmail();
-        }
-        //presenter.checkCurrentUser();
+            presenter.checkCurrentGoogleAcc(account);
+        }*/
+        presenter.checkCurrentUser(this);
     }
 
     @OnClick({R.id.btnGoogle, R.id.llSignup, R.id.tvLoginInsteadAuth, R.id.tvLang})
@@ -115,9 +114,9 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
                 startActivityForResult(signInIntent, RC_SIGN_IN);
                 break;
             case R.id.llSignup:
-                //moveToScreen(SignupActivity.class);
-                String str = App.getInstance().getSharedManager().getUniqueID();
-                Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+                moveToScreen(SignupActivity.class);
+                //String str = App.getInstance().getSharedManager().getUniqueID();
+                //Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tvLoginInsteadAuth:
                 moveToScreen(LoginActivity.class);
@@ -132,8 +131,8 @@ public class AuthMainActivity extends BaseActivity implements AuthMainView, OnSh
     public void onAuthSuccessful() {
         Toast.makeText(this, R.string.welcome, Toast.LENGTH_SHORT).show();
         if (getFirstLogin()) {
-            //moveToScreenWithoutBack(VoiceInfoActivity.class);
-            moveToScreenWithoutBack(HomeActivity.class);
+            moveToScreenWithoutBack(VoiceInfoActivity.class);
+            //moveToScreenWithoutBack(HomeActivity.class);
         } else {
             moveToScreenWithoutBack(HomeActivity.class);
         }
